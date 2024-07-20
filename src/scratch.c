@@ -1,17 +1,26 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
-#include "pico_led.h"
+#include "common.h"
 #include "init_controller.h"
+#include "pico_led.h"
+#include "temp_sensor.h"
 
 int main() {
     init_controller();
 
-    int counter = 0;
+    uint8 counter = 0;
 
     while (1) {
         toggleUserLED();
-        printf("Hello, world! %d\n", counter);
+        printf("Loop Cnt: %d ", counter);
         counter++;
+
+        temp_sensor_loop();
+
+
+
+        printf("\n");
+
         sleep_ms(1000);
     }
 }
