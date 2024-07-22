@@ -8,6 +8,11 @@
 int main() {
     init_controller();
 
+    printf("Controller Init Done\n");
+
+    init_temp_sensor();
+
+    printf("Entering Periodic Loop\n");
     uint8 counter = 0;
 
     while (1) {
@@ -16,8 +21,6 @@ int main() {
         counter++;
 
         temp_sensor_loop();
-
-
 
         printf("\n");
 

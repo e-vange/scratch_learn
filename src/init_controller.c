@@ -8,7 +8,7 @@ void init_controller(void){
     stdio_init_all();
 
     setup_LED();
-    setup_spi();
+    // setup_spi();
     setup_i2c();
 
 }
